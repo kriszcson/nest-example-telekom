@@ -54,4 +54,4 @@ A programot futtató gépen szükséges, hogy telepítve legyenek: **docker, phy
 Doc: https://github.com/shiwaforce/poco
 
 ####
-Ezt követően az alkalmazás elérhető itt: **http://localhost:3000**
+Ezt követően az alkalmazás elérhető itt (példa): **http://localhost:3000/test/01**
