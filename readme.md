@@ -43,6 +43,11 @@ Tesztelve a következő verziószámokkal:
     -Node: v16.13.2
     -Npm: v8.1.2
 
+### Docker (docker-compose)
+A projekt gyökérkönyvtárán belül a /docker mappában a következő paranccsal: **docker-compose up**
+A programot futtató gépen szükséges, hogy telepítve legyenek: **docker**
+
+
 ### Docker (POCO)
 A projekt gyökérkönyvtárában a **poco up** paranccsal.
 A programot futtató gépen szükséges, hogy telepítve legyenek: **docker, phyton, poco**
