@@ -1,0 +1,17 @@
+version: "3"
+services:
+  backend_01:
+    image: node:16
+    logging:
+      options:
+        max-size: "10k"
+        max-file: "3"
+    volumes:
+      - ../backend/:/usr/local/app/backend
+      - ./scripts/docker-entrypoint.sh:/docker-entrypoint.sh
+    working_dir: /usr/local/app/backend
+    ports:
+      - ${PORT}:${PORT}
+    command: /docker-entrypoint.sh
+    env_file: 
+      - ../.env
