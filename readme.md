@@ -31,22 +31,22 @@ A test/reader endpoint egy file-ból olvas fel egy sort és azt adja vissza text
 POST és PUT szolgáltatásoknál a body-t küldje vissza a válaszban a kulcs értékével kiegészítve, ahol nincs kulcs, ott generálja.
 
 
-## Környezeti változók beállítása
-Szükséges a környezeti változók beállítása: A projekt gyökérkönyvtárában lévő **.env.example** fájl mintájára a **.env** létrehozása, és a benne levő környezeti változknak valós értékek megadása.
-
-
 ## Alkalmazás indítása
 
 ### Local
 A projekt gyökérkönyvtárán belül a /backend mappában az alábbi két paranccsal:
-**npm install**
-**nest start** 
+    -**npm install**
+    -**nest start** 
 A programot futtató gépen szükséges, hogy telepítve legyenek: **node, npm, @nestjs/cli** 
 Tesztelve a következő verziószámokkal: 
-NestJS: v8.2.0
-Node: v16.13.2
-Npm: v8.1.2
+    -NestJS: v8.2.0
+    -Node: v16.13.2
+    -Npm: v8.1.2
 
 ### Docker (POCO)
 A projekt gyökérkönyvtárában a **poco up** paranccsal.
 A programot futtató gépen szükséges, hogy telepítve legyenek: **docker, phyton, poco**
+Doc: https://github.com/shiwaforce/poco
+
+####
+Ezt követően az alkalmazás elérhető itt: **http://localhost:3000**

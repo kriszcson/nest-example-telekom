@@ -7,7 +7,8 @@ import { TestService } from './services/test.service';
 
 @Module({
     imports: [],
-    controllers: [TestController, TestReaderController],
+    //To work routing well don't change the order of the controllers imports.  
+    controllers: [TestReaderController, TestController],
     providers: [TestService, TestReaderService, TestInterceptor],
     exports: [TestModule]
 })

@@ -13,28 +13,17 @@ export class TestInterceptor implements NestInterceptor {
     intercept(context: ExecutionContext, next: CallHandler): Observable<any> {
         const requestQuery = context.switchToHttp().getRequest().query;
         const filter = requestQuery.filter;
-        const rows = requestQuery.rows;
-        const page = requestQuery.page;
+        const rows = parseInt(requestQuery.rows);
+        const page = parseInt(requestQuery.page);
 
-        const areRequiredParams =
-            typeof filter != 'undefined' &&
-            typeof rows != 'undefined' &&
-            typeof page != 'undefined';
-
-        if (!areRequiredParams) {
+        const isRequestDataValid =
+            rows == rows && page == page && typeof filter != "undefined"
+        if (!isRequestDataValid) {
+            const errorMessage = 'Rows, page, and filter are required, rows and page must be integers.'
+            console.error(errorMessage);
             throw new BadRequestException(
                 STATUS_CODES.BadRequestException,
-                'Rows, filter, and page are required.'
-            );
-        }
-        const parsedRows = parseInt(rows);
-        const parsedPage = parseInt(page);
-        const areRowsAndPageIntegers =
-            parsedRows == parsedRows && parsedPage == parsedPage;
-        if (!areRowsAndPageIntegers) {
-            throw new BadRequestException(
-                STATUS_CODES.BadRequestException,
-                'Rows and page must be integers.'
+                errorMessage
             );
         }
         return next.handle();

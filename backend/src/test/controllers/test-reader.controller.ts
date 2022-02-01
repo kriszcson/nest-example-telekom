@@ -1,4 +1,4 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Header } from '@nestjs/common';
 
 import { TestReaderService } from '../services/test-reader.service';
 
@@ -6,6 +6,7 @@ import { TestReaderService } from '../services/test-reader.service';
 export class TestReaderController {
     constructor(private readonly testReaderService: TestReaderService) { }
 
+    @Header('content-type', 'text/plain')
     @Get()
     async readingFromTelekomResponseDataFile(): Promise<string> {
         return await this.testReaderService.readingFromTelekomResponseDataFileService();
